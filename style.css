@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+/* Use a black and white color scheme with a little bit of grey on some elements */
+body {
+  background-color: black;
+  color: white;
+}
+a {
+  color: rgb(0, 0, 0);
+}
+.animated-image:before {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+header, nav, input[type="submit"], footer {
+  background-color: rgb(31, 31, 31);
+  color: white;
+}
+input[type="text"], input[type="email"], textarea {
+  border: 1px solid rgb(0, 0, 0);
+}
+
+/* Use the 'Roboto' font for the main content, 'Playfair Display' for the headings, and 'Great Vibes' for the buttons */
+body, main {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+nav a {
+  font-family: 'Great Vibes', cursive;
+}
+
+/* Style the header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Style the top navigation */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+nav li {
+  float: left;
+}
+
+/* Style the links */
+nav a {
+  display: block;
+  text-align: center;
+  padding: 20px 30px;
+  text-decoration: none;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+/* Change the color of links on hover */
+nav a:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Add cool animations to the links on mouse movement */
+nav a:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0.1s;
+}
+nav a:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+/* Style the main content */
+main {
+  margin-top: 80px;
+  padding: 0 50px;
+  min-height: calc(100vh - 80px - 50px);
+}
+
+/* Style the sections */
+section {
+  margin: 50px 0;
+}
+
+/* Style the image */
+.animated-image {
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  height: 500px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Add the animation to the image */
+.animated-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: moveLeftToRight 5s infinite linear;
+}
+
+/* Define the keyframes for the animation */
+@keyframes moveLeftToRight {
+  from {
+    transform: translateX(-50px);
+  }
+  to {
+    transform: translateX(50px);
+  }
+}
+
+/* Style the paragraphs */
+p {
+  margin: 20px 0;
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 20px;
+}
+
+/* Style the form */
+form {
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+input[type="text"], input[type="email"], textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  resize: vertical;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  background-color: black;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Style the footer */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Center the footer content */
+footer p {
+  margin: 0 auto;
+  max-width: 700px;
+  text-align: center;
+}
+
+/* Responsive design - make the navigation links stack vertically instead of horizontally on small screens */
+@media screen and (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+  }
+  nav li {
+    float: none;
+  }
+}
+
